@@ -53,11 +53,6 @@ footer a {
     margin-bottom: 4rem;
 }
 
-/* ======== MEDIA QUERY (MEDIUM DEVICES) ========*/
-@media screen and (max-width: 1024px) {
-    
-}
-
 /* ======== MEDIA QUERY (SMALL DEVICES) ======== */
 @media screen and (max-width: 600px) {
     .permalinks {
