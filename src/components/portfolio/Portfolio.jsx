@@ -7,6 +7,51 @@ import IMG4 from '../../assests/portfolio4.jpg'
 import IMG5 from '../../assests/portfolio5.png'
 import IMG6 from '../../assests/portfolio6.jpg'
 
+const data = [
+  {
+    id: 1,
+    image: IMG1,
+    title: "Crypto Currency Dashbord & Financial Visualization",
+    github: "https://github.com/FIDELIS-TUWEI",
+    demo: "https://dribble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization"
+  },
+  {
+    id: 2,
+    image: IMG2,
+    title: "Charts templates & infographics in Figma",
+    github: "https://github.com/FIDELIS-TUWEI",
+    demo: "https://dribble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization"
+  },
+  {
+    id: 3,
+    image: IMG3,
+    title: "Figma Dashboard UI kit for Data design web apps",
+    github: "https://github.com/FIDELIS-TUWEI",
+    demo: "https://dribble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization"
+  },
+  {
+    id: 4,
+    image: IMG4,
+    title: "Maintaining tasks and tracking progress",
+    github: "https://github.com/FIDELIS-TUWEI",
+    demo: "https://dribble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization"
+  },
+  {
+    id: 5,
+    image: IMG5,
+    title: "Crypto Currency Dashbord & Financial Visualization",
+    github: "https://github.com/FIDELIS-TUWEI",
+    demo: "https://dribble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization"
+  },
+  {
+    id: 6,
+    image: IMG6,
+    title: "Crypto Currency Dashbord & Financial Visualization",
+    github: "https://github.com/FIDELIS-TUWEI",
+    demo: "https://dribble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization"
+  },
+]
+
 const Portfolio = () => {
   return (
     <section id='portfolio'>
@@ -14,20 +59,26 @@ const Portfolio = () => {
       <h2>Portfolio</h2>
 
       <div className="container portfolio__container">
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt="" />
-          </div>
-          <h3>This is a Portfolio item title</h3>
-          
-          <div className="portfolio__item-cta">
-            <a href="https://github.com" className="btn" target="_blank">GitHub</a>
-            <a href="https://dribble.com/Alien_pixels" className="btn btn-primary" target="_blank">Live Demo</a>
-          </div>
-        </article>
+        {
+          data.map(({id, image, title, github, demo}) => {
+            return (
+              <article key={id} className="portfolio__item">
+                <div className="portfolio__item-image">
+                  <img src={image} alt={title} />
+                </div>
+                <h3>{title}</h3>
+
+                <div className="portfolio__item-cta">
+                  <a href={github} className="btn" target="_blank">GitHub</a>
+                  <a href={demo} className="btn btn-primary" target="_blank">Live Demo</a>
+                </div>
+              </article>
+            )
+          })
+        }
       </div>
     </section>
   )
 }
 
-export default Portfolio
+export default Portfolio;
